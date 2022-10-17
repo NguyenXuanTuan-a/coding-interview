@@ -1,0 +1,58 @@
+1. Tại sao chuỗi bất biến (Immutable)
+
+
+
+
+2. Khác nhau i++ và ++i 
+==> i++ gán giá trị vào i trước rồi mới thực hiện ++ tiếp đó gán lại kết quả cho i
+==> ++ i sẽ cộng giá trị vào i trước rồi sẽ gán kết quả vào lại i
+
+
+3. Biến instance là biến được khai báo ngay dưới class không thuộc hàm nào và ko có từ khóa static , Biến instance được tao ra khi đối được khởi tạo bằng từ khóa new ( Person per = new Person)
+vd: public class Person {
+    // Biến instance
+    String name;
+    String address;
+
+4. Hàm instance chỉ được sử dụng khi chúng ta new đối tượng từ class
+vd : Person per = new Person(); 
+       per.goAround() --> đây chính làm hàm instance chỉ sử dụng được khi ta dùng new tạo đối tượng
+
+
+5. Contructor
+public class Person {
+    // Biến instance
+    String name;
+Dùng để khởi tạo các giá trị cho biến instance ( tên contructor giống hệt tên class)
+    public Person (){ // contructor ko có đối số
+    }
+-> Tất cả các class đều có contructor mặc định nhưng nếu ta tạo ra contructor thì contructor mặc định sẽ bị xóa đi
+
+
+6. Biến và hàm của class/static ( không cần new đối tượng để gọi biến, hàm static)
+static int passport = 12323; // Biến static hoặc biến class
+public static int total(int age , int height) { // Hàm class
+        return age + height;
+    }
+Biến và hàm static hay class sẽ được dùng chung cho mọi đối tượng của class -> không cần tạo đối tượng để gọi đến biến và hàm mà có thể gọi trực tiếp thông qua tên class 
+-> Person.passport
+-> Person.total()
+-> Biến và hàm class thì mọi đối tượng đều truy cập được ngược lại thì k
+
+7. Biến Local
+Là biến được khai báo trong các hàm và thời gian tồn tại chỉ trong hàm đó
+
+
+8. Bộ nhớ stack và heap
+Bộ nhớ heap dùng để lưu các đối tượng
+
+Bộ nhớ stack lưu các biến cục bộ, nơi gọi hàm ....
+
+
+9. Sự khác nhau giữa null và 0
+- 0 chỉ dùng cho kiểu dữ liệu int và float ( int x = 0)
+- Phim phim = null;  ==> Kiểu dữ liệu đối tượng => phim này chưa được trỏ đến thằng nào trong bộ nhớ heap 
+
+10. Khi một mảng được truyền vào 1 phương thức (method) -> Thì 1 tham chiếu của mảng sẽ được phương thức này nhận
+
+vd: public void goArround (int a[] )
